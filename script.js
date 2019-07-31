@@ -91,20 +91,23 @@ const notepad = {
          */
     },
     filterNotesByPriority(priority) {
-        const filteredNotes = [];
-        for (const prioritys of notepad.notes) {
-            const hasPriority = prioritys.priority;
-
-            if (hasPriority) {
-                filteredNotes.push(prioritys);
-            };
-            return filteredNotes;
+        const result = [];
+        for(let key of notepad.notes) {
+          if(key.priority === priority) {
+            result.push(key)
+          }
         }
-        /*
-         * Фильтрует массив заметок по значению приоритета* Если значение priority совпадает с приоритетом заметки - она подходит* Принимает: приоритет для поиска в свойстве priority заметки
-         * Возвращает: новый массив заметок с подходящим приоритетом
-         */
-    },
+        return result
+        // /*
+        //  * Фильтрует массив заметок по значению приоритета
+        //  * Если значение priority совпадает с приоритетом заметки - она подходит
+        //  *
+        //  * Принимает: приоритет для поиска в свойстве priority заметки
+        //  * Возвращает: новый массив заметок с подходящим приоритетом
+        //  */
+      },
+
+   
 };
 
 
